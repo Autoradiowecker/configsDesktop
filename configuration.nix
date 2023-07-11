@@ -24,8 +24,9 @@ in
   boot.loader.grub.device = "/dev/sdb";
   boot.loader.grub.useOSProber = true;
   
+  #mount second hdd to filesystem
   fileSystems."/home/clemensguenther/mount/HDD" =
-  { device = "/dev/sda2";
+  { device = "/dev/disk/by-uuid/6a8ebe77-3919-40f9-a5a4-2068b5f74f66";
     fsType = "ext3";
     options = [ "nofail" ];
   };
