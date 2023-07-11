@@ -1,2 +1,2 @@
-# configsDesktop
-configsDesktop
+# configs Desktop
+nixos Configs für Dektop PC
