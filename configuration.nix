@@ -163,6 +163,7 @@ in
      pgadmin4
      space-cadet-pinball
      spotify
+     steam
      vscode
      yt-dlp
   ];
