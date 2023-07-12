@@ -139,9 +139,15 @@ in
     };
   };
 
-  # Allow flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];  # Allow flakes
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -157,15 +163,20 @@ in
      gnome.gnome-tweaks
      gnomeExtensions.pop-shell
      libreoffice
-     unstable.livebook #start cmd livebook server
+     lutris
      neofetch
      pavucontrol
      pgadmin4
      space-cadet-pinball
      spotify
      steam
+     unstable.livebook #start cmd livebook server
      vscode
      yt-dlp
+     winetricks
+     wineWowPackages.stable
+     openssl
+     unstable.gnome.zenity
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
