@@ -147,6 +147,9 @@ in
         config = config.nixpkgs.config;
       };
     };
+    permittedInsecurePackages = [
+      "electron-24.8.6"
+    ];
   };
 
   nix = {
@@ -174,7 +177,7 @@ in
      gnome.gnome-tweaks
      gnomeExtensions.pop-shell
      libreoffice
-     lutris
+     #lutris
      neofetch
      pavucontrol
      pgadmin4
@@ -185,7 +188,7 @@ in
      vscode
      yt-dlp
      winetricks
-     wineWowPackages.stable
+     #wineWowPackages.stable
      openssl
      unstable.gnome.zenity
   ];
