@@ -44,6 +44,15 @@ in
     ls = "ls --color=tty";
     move = "mv";
   };
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+  #programs.sway.enable = true;
+
+   
+  hardware.opengl.driSupport32Bit = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -73,10 +82,11 @@ in
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
-
+  
   
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  #services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -154,6 +164,7 @@ in
   environment.systemPackages = with pkgs; [
      bitwarden
      brave
+     bottles
      discord
      elixir
      filezilla 
@@ -178,7 +189,6 @@ in
      openssl
      unstable.gnome.zenity
   ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
