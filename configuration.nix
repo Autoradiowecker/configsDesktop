@@ -165,6 +165,7 @@ in
      bitwarden
      brave
      bottles
+     clementine
      discord
      elixir
      filezilla 
@@ -181,7 +182,8 @@ in
      space-cadet-pinball
      spotify
      steam
-     unstable.livebook #start cmd livebook server
+     unstable.livebook # cmd livebook start server
+     vlc
      vscode
      yt-dlp
      winetricks
@@ -189,6 +191,12 @@ in
      openssl
      unstable.gnome.zenity
   ];
+
+  fonts.fonts = with pkgs; [
+    carlito
+  ];
+
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -198,7 +206,7 @@ in
   # };
 
   # List services that you want to enable:
-
+  #services.xserver.displayManager.sddm.autoNumlock;
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
